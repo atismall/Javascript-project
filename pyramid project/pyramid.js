@@ -4,7 +4,7 @@ let count = 8;
 let pyramid;
 
 for(let i = 0; i < count; i++){
- 
+  pyramid = star.mu
 }
 
 result += pyramid + "/n";
