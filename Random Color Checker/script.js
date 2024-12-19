@@ -1,4 +1,6 @@
 const colorButtonChanger = document.getElementById("change_bg");
+const body = document.querySelector("body");
+const hexCode = document.querySelector("#color_hex_code");
 
 let sampleColor = [
   "#2C3E50",
@@ -18,7 +20,10 @@ function getRandomIndex() {
 };
 
 function activeColor() {
-   return document.body.style.backgroundColor = sampleColor[getRandomIndex()];
+   const color = sampleColor[getRandomIndex()];
+
+   hexCode.innerText = color;
+   body.style.backgroundColor = color;
 }
-console.log(activeColor())
-colorButtonChanger.onclick() = activeColor();
+
+colorButtonChanger.onclick = activeColor;

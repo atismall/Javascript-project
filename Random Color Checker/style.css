@@ -1,5 +1,16 @@
+
+
+:root {
+    --yellow: #f1be32;
+    --golden-yellow: #feac32;
+    --dark-purple: #110815;
+    --light-grey: #efefef;
+}
+
 body{
-    background-color: #081215;
+    background-color: var(--dark-purple);
+    color: var(--light-grey);
+    text-align: center;
 }
 
 h1 {
@@ -12,4 +23,11 @@ main, h1{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.change_bg {
+    background-color: var(--golden-yellow);
+    background-image: linear-gradient(#fecc4c, #ffac33);
+    border: 1px solid var(--golden-yellow);
+    padding: 5px 5px;
 }
