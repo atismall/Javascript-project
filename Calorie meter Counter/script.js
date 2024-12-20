@@ -7,5 +7,14 @@ const output = document.getElementById("output");
 let isError = false;
 
 function isCleanString(str) {
-    const regex = /[+-\s]/;
+    const regex = /[+-\s]/g;
+    return str.replace(regex, "");
 }
+
+function isValidInput(str) {
+    const regex = /\d+e\d+/i;
+    return str.match(regex);
+}
+
+console.log(isValidInput("1e3"));
+console.log(isValidInput("13"));
