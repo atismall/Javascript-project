@@ -7,5 +7,5 @@ const output = document.getElementById("output");
 let isError = false;
 
 function isCleanString(str) {
-    
+    const regex = /[+-\s]/;
 }
