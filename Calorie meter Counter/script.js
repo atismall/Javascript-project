@@ -23,7 +23,7 @@ function addEntry(){
     <label for="${entryDropdown.value}_${entryNumber}_name"> Entry ${entryNumber} Name</label>
     <input type="text" placeholder="Name" id="${entryDropdown.value}_${entryNumber}_name" />
     <label for="${entryDropdown.value}_${entryNumber}_calories"> Entry ${entryNumber} Calories</label>
-    <input type="text" placeholder="Calories" id="${entryDropdown.value}_${entryNumber}_calories" />
+    <input type="number" placeholder="Calories" id="${entryDropdown.value}_${entryNumber}_calories" />
     `
     targetInputContainer.innerHTML += HTMLString;
 }
