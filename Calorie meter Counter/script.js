@@ -1,7 +1,7 @@
 const calorieCounter = document.getElementById("calorie_counter");
 const budgetNumber = document.getElementById("budget");
 const entryDropdown = document.getElementById("entry_dropdown");
-const addEntry = document.getElementById("add_entry");
+const addEntryButton = document.getElementById("add_entry");
 const clear = document.getElementById("clear");
 const output = document.getElementById("output");
 let isError = false;
@@ -16,5 +16,14 @@ function isValidInput(str) {
     return str.match(regex);
 }
 
-console.log(isValidInput("1e3"));
-console.log(isValidInput("13"));
+function addEntry(){
+    const targetInputContainer = document.querySelector(`#${entryDropdown.value} .input_container`);
+    const entryNumber = targetInputContainer.querySelectorAll(`input[type="text"]`);
+    const HTMLString = `
+    <label for="${entryDropdown.value}_${entryNumber}_name"> Entry ${entryNumber} Name</label>
+    <input type="text" placeholder="Name" id="${entryDropdown.value}_${entryNumber}_name" />
+    <label for="${entryDropdown.value}_${entryNumber}_calories"> Entry ${entryNumber} Calories</label>
+    <input type="text" placeholder="Calories" id="${entryDropdown.value}_${entryNumber}_calories" />
+    `
+    targetInputContainer.innerHTML += HTMLString;
+}
