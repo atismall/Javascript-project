@@ -45,4 +45,40 @@ function getCaloriesFromInput(list) {
     return calories;
 }
 
+function calculateCalories(e) {
+    e.preventDefault();
+    isError = false;
+    const breakFastNumberInputs = document.querySelectorAll(`#breakfast input[type="number"]`);
+    const lunchNumberInputs = document.querySelectorAll(`#lunch input[type="number"]`);
+    const dinnerNumberInputs = document.querySelectorAll(`#dinner input[type="number"]`);
+    const snacksNumberInputs = document.querySelectorAll(`#snacks input[type="number"]`);
+    const exerciseNumberInputs = document.querySelectorAll(`#exercise input[type="number"]`);
+
+    const breakfastCalories = getCaloriesFromInput(breakFastNumberInputs);
+    const lunchCalories = getCaloriesFromInput(lunchNumberInputs);
+    const dinnerCalories = getCaloriesFromInput(dinnerNumberInputs);
+    const snacksCalories = getCaloriesFromInput(snacksNumberInputs);
+    const exerciseCalories = getCaloriesFromInput(exerciseNumberInputs);
+
+    const budgetCalories = getCaloriesFromInput([budgetNumber])
+
+    if(isError) {
+        return;
+    }
+
+    const consumedCalories = breakfastCalories + lunchCalories + dinnerCalories + snacksCalories;
+    const remainingCalories = budgetCalories - consumedCalories + exerciseCalories;
+
+    const surplusOrDeficit = remainingCalories < 0 ? "Surplus" : "Deficit";
+
+    output.innerHTML = `
+    <span class="${surplusOrDeficit.toLowerCase()}">${Math.abs(remainingCalories)} Calories ${surplusOrDeficit}</span>
+    <hr />
+    <p>${budgetCalories} Calories Budgeted</p>
+    <p>${consumedCalories} Calories Consumed</p>
+    <p>${exerciseCalories} Calories Burned</p>
+
+    `
+
+}
 addEntryButton.addEventListener("click", addEntry);
