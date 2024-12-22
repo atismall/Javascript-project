@@ -77,8 +77,21 @@ function calculateCalories(e) {
     <p>${budgetCalories} Calories Budgeted</p>
     <p>${consumedCalories} Calories Consumed</p>
     <p>${exerciseCalories} Calories Burned</p>
-
     `
-
+    output.classList.remove('hide');
 }
+
+function clearForm() {
+    const inputContainers = Array.from(document.querySelectorAll(".input_container"));
+    
+    for (const container of inputContainers) {
+        container.innerHTML = '';
+    }
+    budgetNumber.value = '';
+    output.innerText = '';
+    output.classList.add('hide');
+}
+
+calorieCounter.addEventListener('submit', calculateCalories);
+clear.addEventListener('click', clearForm);
 addEntryButton.addEventListener("click", addEntry);
