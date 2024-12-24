@@ -27,19 +27,25 @@
             </p>
         </details>
         <div class="score_container">
+            <strong>Player Score: <span class="score" id="player_score">0</span></strong>
             <strong>Computer Score: <span class="score" id="computer_score">0</span></strong>
         </div>
 
         <section class="options_container">
             <h2>Choose an option:</h2>
-            <div>
-                <button>Rock</button>
-                <button>Paper</button>
-                <button>Scissors</button>
+            <div class="btn_container">
+                <button class="btn" id="rock_btn">Rock</button>
+                <button class="btn" id="paper_btn">Paper</button>
+                <button class="btn" id="scissors_btn">Scissors</button>
             </div>
         </section>
-    </main>
 
+        <div class="results_container">
+            <p id="results_msg"></p>
+            <p id="winner_msg"></p>
+            <button class="btn" id="reset_game_btn">Play again?</button>
+        </div>
+    </main>
 
     <script src="script.js"></script>
 </body>
