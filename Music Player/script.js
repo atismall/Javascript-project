@@ -90,7 +90,7 @@ const audio = new Audio();
 let userData = {
     songs: [...allSongs],
     currentSong: null,
-    currentSontTime: 0,
+    songCurrentTimeTime: 0,
 }
 
 const playSong = (id) => {
@@ -138,11 +138,11 @@ const renderSongs = (array) => {
 };
 
 playButton.addEventListener("click", () => {
-  if (userData?.currentSong === null) {
-  playSong(userData?.songs[0].id);
-} else {
-  playSong(userData?.currentSong.id);
-}
+      if (userData?.currentSong === null) {
+      playSong(userData?.songs[0].id);
+      } else {
+        playSong(userData?.currentSong.id);
+      }
 });
 
 const sortSongs = () => {
