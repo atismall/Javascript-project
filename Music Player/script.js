@@ -116,6 +116,8 @@ const pauseSong = () => {
   audio.pause();
 };
 
+const ResetButton = (id) => {}
+
 const renderSongs = (array) => {
     const songsHTML = array
       .map((song)=> { 
