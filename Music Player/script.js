@@ -290,3 +290,4 @@ const sortSongs = () => {
   };
 
 renderSongs(sortSongs())
+setPlayButtonAccessibleText();
