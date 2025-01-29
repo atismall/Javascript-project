@@ -3,14 +3,18 @@ const symbol = "#";
 const count = 8;
 const rows = [];
 
+function pyramidGenerator (rowNumber, rowCount) {
+    return " ".repeat(rowNumber) + (2 * symbol) + " ".repeat(rowNumber)
+} 
+
 for (let i = 0; i <= count; i++){
-    rows.push(symbol)
+    rows.push(pyramidGenerator(i+1))
 }
-console.log(rows)
-const result = "";
+
+let result = "";
 
 for(const row of rows){
-    result = result + row;
+    result = result + row + "\n";
 }
 
 console.log(result)
