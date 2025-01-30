@@ -3,13 +3,20 @@ const symbol = "#";
 const count = 8;
 const rows = [];
 
+
+for (let i = 1; i <= count; i++) {
+    rows.unshift(pyramidGenerator(i, count))
+}
+
+while(rows.length < count) {
+    rows.push(pyramidGenerator(rows.length + 1, count))
+}
+
 function pyramidGenerator (rowNumber, rowCount) {
-    return " ".repeat(rowNumber) + symbol.repeat(2*rowNumber - 1) + " ".repeat(rowNumber)
+    return " ".repeat(rowCount - rowNumber) + symbol.repeat(2*rowNumber - 1) + " ".repeat(rowCount - rowNumber)
 } 
 
-for (let i = 0; i <= count; i++){
-    rows.push(pyramidGenerator(i+1))
-}
+
 
 let result = "";
 
