@@ -4,9 +4,9 @@ const count = 8;
 const rows = [];
 
 
-for (let i = 1; i <= count; i++) {
-    rows.unshift(pyramidGenerator(i, count))
-}
+// for (let i = 1; i <= count; i++) {
+//     rows.unshift(pyramidGenerator(i, count))
+// }
 
 while(rows.length < count) {
     rows.push(pyramidGenerator(rows.length + 1, count))
