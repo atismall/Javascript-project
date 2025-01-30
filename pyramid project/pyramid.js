@@ -4,7 +4,7 @@ const count = 8;
 const rows = [];
 
 function pyramidGenerator (rowNumber, rowCount) {
-    return " ".repeat(rowNumber) + (2 * symbol) + " ".repeat(rowNumber)
+    return " ".repeat(rowNumber) + symbol.repeat(2*rowNumber - 1) + " ".repeat(rowNumber)
 } 
 
 for (let i = 0; i <= count; i++){
